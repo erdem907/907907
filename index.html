@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0f3d2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Erdem Mesai">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+<title>Erdem Mesai Takip</title>
+</head>
+<body>
+<div class="app" id="app">
+  <main class="screen" id="screen" aria-live="polite"></main>
+
+  <nav class="tabs" aria-label="Ana menü">
+    <button class="tab" data-act="tab" data-v="home"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.8"/><rect x="14" y="3" width="7" height="5" rx="1.8"/><rect x="14" y="12" width="7" height="9" rx="1.8"/><rect x="3" y="16" width="7" height="5" rx="1.8"/></svg><span>Özet</span></button>
+    <button class="tab" data-act="tab" data-v="cal"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Takvim</span></button>
+    <button class="tab add" data-act="add" aria-label="Mesai ekle"><span class="plus">+</span></button>
+    <button class="tab" data-act="tab" data-v="year"><svg viewBox="0 0 24 24"><path d="M5 21V12M12 21V4M19 21v-6" stroke-width="2.6"/></svg><span>Yıl</span></button>
+    <button class="tab" data-act="tab" data-v="set"><svg viewBox="0 0 24 24"><path d="M4 7h9M18 7h2M4 17h2M11 17h9"/><circle cx="15.5" cy="7" r="2.3"/><circle cx="8.5" cy="17" r="2.3"/></svg><span>Ayarlar</span></button>
+  </nav>
+
+  <div class="sheet-wrap" id="sheetWrap" aria-hidden="true"></div>
+
+  <div class="lock hidden" id="lock">
+    <div class="lock-in">
+      <div class="lock-ico">🔒</div>
+      <h2 id="lockTitle">PIN gir</h2>
+      <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
+      <div class="lock-msg" id="lockMsg"></div>
+      <div class="pad" id="pad"></div>
+      <button class="link" id="lockAlt"></button>
+    </div>
+  </div>
+
+  <button class="tpill hidden" id="tpill" data-act="tstop" aria-label="Sayacı bitir"></button>
+
+  <div class="toast" id="toast" role="status"></div>
+</div>
+
+<div id="printArea"></div>
+<input type="file" id="restoreFile" accept="application/json,.json" hidden>
+
+<script src="js/core.js"></script>
+<script src="js/holidays.js"></script>
+<script src="js/xlsx.js"></script>
+<script src="js/pdf.js"></script>
+<script src="js/views.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
